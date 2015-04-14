@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{CFFF7B0F-4462-7C7C-43C9-37CA1A75BD6F}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_0;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>D:/Programs/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>D:/Programs/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Exploder\Demo\Scripts\CursorLocking.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\ExploderMouseLook.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\GrenadeController.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\GrenadeObject.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\PanelChairBomb.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\PanelResetScene.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\PanelThrowObject.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\RPGController.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\RobotScript.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\Rocket.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\ShotgunController.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\TargetManager.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\ThrowObject.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\UseObject.cs" />
+     <Compile Include="Assets\Exploder\Demo\Scripts\WeaponManager.cs" />
+     <Compile Include="Assets\Exploder\DemoClickExplode\DemoClickExplode.cs" />
+     <Compile Include="Assets\Exploder\DemoClickExplode\DemoClickExplode2D.cs" />
+     <Compile Include="Assets\Exploder\DemoClickExplode\DemoSelfExplode.cs" />
+     <Compile Include="Assets\Exploder\DemoSimple\DemoSimple.cs" />
+     <Compile Include="Assets\Exploder\Examples\ExplodeAllObjects.cs" />
+     <Compile Include="Assets\Exploder\Examples\HowToGetActiveFragments.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Core\ArrayDictionary.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Core\Contour.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Core\LSHash.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Core\MeshCutter.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Core\MeshUtils.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Core\Plane.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Core\Polygon.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Explodable.cs" />
+     <Compile Include="Assets\Exploder\Exploder\ExploderObject.cs" />
+     <Compile Include="Assets\Exploder\Exploder\ExploderOption.cs" />
+     <Compile Include="Assets\Exploder\Exploder\ExploderQueue.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Fragment.cs" />
+     <Compile Include="Assets\Exploder\Exploder\FragmentPool.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Utils\ExploderProfiler.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Utils\ExploderSingleton.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Utils\ExploderSlowMotion.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Utils\ExploderUtils.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Utils\HUDFPS.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Utils\Hull2D.cs" />
+     <Compile Include="Assets\Exploder\Exploder\Utils\TestVertexColors.cs" />
+     <Compile Include="Assets\Exploder\Playmaker\CrackAction.cs" />
+     <Compile Include="Assets\Exploder\Playmaker\ExplodeAction.cs" />
+     <Compile Include="Assets\Exploder\Playmaker\ExplodeCrackedAction.cs" />
+     <Compile Include="Assets\Scripts\cameraBehavior.cs" />
+     <Compile Include="Assets\Scripts\enemy.cs" />
+     <Compile Include="Assets\Scripts\swipecontrols.cs" />
+     <Compile Include="Assets\Scripts\throwobject.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\SceneLoader.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\ThirdPersonCamera.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+     <None Include="Assets\Exploder\Demo\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\UnityChan\license.txt" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
+     <None Include="Assets\Exploder\Demo\Shaders\VertexColor.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+     <None Include="Assets\UnityChan\Stage\Shader\AlphaMask.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+     <None Include="Assets\Exploder\Exploder\3rd\P2T.txt" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/Programs/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="P2T">
+ <HintPath>C:/Users/Elmer John Soria/Desktop/Unity5 Projects/DeadDrop/DeadDrop/Assets/Exploder/Exploder/3rd/P2T.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
