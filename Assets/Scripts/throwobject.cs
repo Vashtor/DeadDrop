@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace Exploder.Examples
+{
 public class throwobject : MonoBehaviour {
 
 	public float radius = 5.0F;
@@ -8,9 +9,16 @@ public class throwobject : MonoBehaviour {
 	public float objMass;
 	public Transform cameraTransform = Camera.main.transform;
 
-	public GameObject mainCamera;
-	void Start() {
+	public bool destroyWeapon;
 
+	public ExploderObject ExploderObjectInstance;
+	private GameObject DestroyableObjects;
+
+	public GameObject mainCamera;
+
+	void Start() {
+			destroyWeapon = false;
+		ExploderObjectInstance = GameObject.Find ("GameManager").GetComponent<Manager> ().ExploderObjectInstance;
 		mainCamera = GameObject.Find("Main Camera");
 		mainCamera.GetComponent<cameraBehavior>().isWeaponExist = true;
 
@@ -26,13 +34,21 @@ public class throwobject : MonoBehaviour {
 		*/
 		objMass = GetComponent<Rigidbody>().mass;
 		power = objMass;
-
+		DestroyableObjects = this.gameObject;
 		//followCamera();
 	}
 
+		void Update()
+		{
+			if(destroyWeapon)
+			ExplodeObject(DestroyableObjects);
+		}
+
 	void OnCollisionEnter(Collision obj){
-		Debug.Log (obj.gameObject.name);
-		if (obj.gameObject.tag == "Enemy") {
+
+		
+
+		if (obj.gameObject.tag == "Exploder") {
 			
 			Vector3 explosionPos = transform.position;
 			Collider[] colliders = Physics.OverlapSphere (explosionPos, radius);
@@ -43,10 +59,17 @@ public class throwobject : MonoBehaviour {
 			}
 
 		}
-		if(obj.gameObject.tag == "Ground")
-			mainCamera.GetComponent<cameraBehavior>().isWeaponExist = false;
+			/*
+		if (obj.gameObject.tag == "Ground") {
+
+				ExplodeObject(DestroyableObjects);
+		}*/
+			mainCamera.GetComponent<cameraBehavior> ().isWeaponExist = false;
+			destroyWeapon = true;
+			DestroyObject(this.gameObject,1.5f);
 	}
 
+		/*
 	void OnCollisionStay(Collision col)
 	{
 		if (col.gameObject.tag == "Ground") {
@@ -54,12 +77,23 @@ public class throwobject : MonoBehaviour {
 			DestroyObject(this.gameObject,1.0f);
 		}
 	}
+		*/
+
 	void followCamera()
 	{
 		cameraTransform.parent = transform;
 		cameraTransform.localPosition = -Vector3.forward * 5;
 		cameraTransform.LookAt(transform);
 	}
+
+	private void ExplodeObject(GameObject gameObject)
+	{
+		ExploderUtils.SetActive(ExploderObjectInstance.gameObject, true);
+		ExploderObjectInstance.transform.position = ExploderUtils.GetCentroid(gameObject);
+		ExploderObjectInstance.Radius = 1.0f;
+		ExploderObjectInstance.Explode();
+	}
 	
 	
+ }
 }

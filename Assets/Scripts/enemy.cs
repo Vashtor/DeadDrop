@@ -16,9 +16,12 @@ public class enemy : MonoBehaviour {
 	private int counter;
 	private int counterFinished;
 
+		public GameObject Manager;
+
 	// Use this for initialization
 	void Start () {
 	
+		Manager = GameObject.Find("GameManager");
 		bodies =  gameObject.GetComponentsInChildren<Rigidbody>();
 		isHit = false;
 		foreach (Rigidbody rig in bodies)
@@ -50,8 +53,8 @@ public class enemy : MonoBehaviour {
 				 		}
 				*/
 
-				ExplodeObject(DestroyableObjects);
-				GameObject parti= Instantiate (explodeParticle,new Vector3(this.transform.position.x, 0, this.transform.position.z) , Quaternion.identity) as GameObject;
+				//ExplodeObject(DestroyableObjects);
+				//GameObject parti= Instantiate (explodeParticle,new Vector3(this.transform.position.x, 0, this.transform.position.z) , Quaternion.identity) as GameObject;
 
 			
 		}
@@ -59,7 +62,7 @@ public class enemy : MonoBehaviour {
 	
 	void OnCollisionEnter(Collision obj){
 
-		if (obj.gameObject.tag == "Weapon") {
+		if (obj.gameObject.tag == "Exploder") {
 			/*
 			Vector3 explosionPos = transform.position;
 			Collider[] colliders = Physics.OverlapSphere (explosionPos, radius);
@@ -70,6 +73,8 @@ public class enemy : MonoBehaviour {
 					*/
 				isHit = true;
 			//GetComponent<Collider>().enabled = false;
+
+			
 			StartCoroutine("waitDestroy");
 				/*
 				if(obj.gameObject.GetComponent<Rigidbody>().mass > 500)
@@ -88,6 +93,7 @@ public class enemy : MonoBehaviour {
 
 	IEnumerator waitDestroy() {
 		yield return new WaitForSeconds(0.5f);
+		Manager.GetComponent<Manager>().score += 1;
 		GetComponent<Collider>().enabled = false;
 		GetComponent<Rigidbody> ().isKinematic = true;
 	}

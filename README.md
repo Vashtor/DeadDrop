@@ -1,2 +1,0 @@
-# DeadDrop
-Dead Drop
